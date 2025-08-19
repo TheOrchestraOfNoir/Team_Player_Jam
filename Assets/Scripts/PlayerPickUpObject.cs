@@ -15,10 +15,7 @@ public class PlayerPickUpObject : MonoBehaviour {
     public SpriteRenderer spriteRender;  // Shows if the player can pick somehting up
     
     [Header("Player Key Bind")]
-    public KeyCode playerOneKey = KeyCode.P;
-    public KeyCode playerTwoKey = KeyCode.Q;
-    
-    private bool _isPlayerOne = true;      // Set to true if this is player 1
+    public KeyCode keyBind = KeyCode.P;
 
     private bool _isHoldingObject = false;
     private GameObject _heldObject;       // The object currently being held
@@ -27,7 +24,6 @@ public class PlayerPickUpObject : MonoBehaviour {
     // Called when the game starts
     private void Start() {
         _playerMovement = GetComponentInParent<PlayerMovement>();  
-        _isPlayerOne = _playerMovement.isPlayerOne;
     }
 
     // Called every frame
@@ -41,13 +37,13 @@ public class PlayerPickUpObject : MonoBehaviour {
         if (!_isHoldingObject && _objectInRange != null) {
             spriteRender.enabled = true;
             // Pick up object when the correct key is pressed
-            if ((_isPlayerOne && Input.GetKeyDown(playerOneKey)) || (!_isPlayerOne && Input.GetKeyDown(playerTwoKey))) {
+            if (Input.GetKeyDown(keyBind)) {
                 PickUpObjectMethod(_objectInRange);
             }
         }
         else if (_isHoldingObject) {
             // Throw object when the correct key is pressed
-            if ((_isPlayerOne && Input.GetKeyDown(playerOneKey)) || (!_isPlayerOne && Input.GetKeyDown(playerTwoKey))) {
+            if (Input.GetKeyDown(keyBind)) {
                 ThrowObjectMethod();
             }
         }

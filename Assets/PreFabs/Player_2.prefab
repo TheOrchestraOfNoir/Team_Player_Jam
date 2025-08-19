@@ -273,8 +273,7 @@ MonoBehaviour:
   pickupRadius: 0.5
   throwForce: 3
   spriteRender: {fileID: 6025144722672612244}
-  playerOneKey: 112
-  playerTwoKey: 113
+  keyBind: 113
 --- !u!61 &9054054414006918546
 BoxCollider2D:
   m_ObjectHideFlags: 0
