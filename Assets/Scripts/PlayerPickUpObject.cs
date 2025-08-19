@@ -12,6 +12,7 @@ public class PlayerPickUpObject : MonoBehaviour {
     public Transform pickupPoint;         // Where the object will be held
     public float pickupRadius = 0.5f;    // How far the player can reach to pick up
     public float throwForce = 3f;        // How strong the throw is
+    public SpriteRenderer spriteRender;  // Shows if the player can pick somehting up
     
     [Header("Player Key Bind")]
     public KeyCode playerOneKey = KeyCode.P;
@@ -23,7 +24,6 @@ public class PlayerPickUpObject : MonoBehaviour {
     private GameObject _heldObject;       // The object currently being held
     private PlayerMovement _playerMovement;
     private Collider2D _objectInRange;    // Object in pickup range
-
     // Called when the game starts
     private void Start() {
         _playerMovement = GetComponentInParent<PlayerMovement>();  
@@ -35,7 +35,11 @@ public class PlayerPickUpObject : MonoBehaviour {
         // Check if there is an object in front of the player
         _objectInRange = Physics2D.OverlapCircle(pickupPoint.position, pickupRadius, layerMask);
 
+        // Makes the idea sprite turn on/off based on if you can pick up an item
+        spriteRender.enabled = !_isHoldingObject && _objectInRange != null;
+        
         if (!_isHoldingObject && _objectInRange != null) {
+            spriteRender.enabled = true;
             // Pick up object when the correct key is pressed
             if ((_isPlayerOne && Input.GetKeyDown(playerOneKey)) || (!_isPlayerOne && Input.GetKeyDown(playerTwoKey))) {
                 PickUpObjectMethod(_objectInRange);
