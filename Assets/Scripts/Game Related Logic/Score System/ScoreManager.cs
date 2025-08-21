@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 using TMPro;
 using System;
 =======
@@ -35,18 +34,10 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
 >>>>>>> parent of 4ffe70a (Score System Logic Established)
-=======
-
-public class ScoreManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
->>>>>>> parent of 4ffe70a (Score System Logic Established)
     {
         
     }
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public void Add(int amount)
@@ -69,16 +60,11 @@ public class ScoreManager : MonoBehaviour
 =======
 =======
 >>>>>>> parent of 4ffe70a (Score System Logic Established)
-=======
->>>>>>> parent of 4ffe70a (Score System Logic Established)
     // Update is called once per frame
     void Update()
     {
         
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 4ffe70a (Score System Logic Established)
-=======
 >>>>>>> parent of 4ffe70a (Score System Logic Established)
 =======
 >>>>>>> parent of 4ffe70a (Score System Logic Established)
