@@ -1,9 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using TMPro;
 using System;
+=======
+>>>>>>> parent of 4ffe70a (Score System Logic Established)
 
-public class ScoreManagerTMP : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
+<<<<<<< HEAD
     public static ScoreManagerTMP Instance { get; private set; }
 
     [Header("UI")]
@@ -16,12 +22,15 @@ public class ScoreManagerTMP : MonoBehaviour
     public event Action<int> OnScoreChanged;
 
     private void Awake()
+=======
+    // Start is called before the first frame update
+    void Start()
+>>>>>>> parent of 4ffe70a (Score System Logic Established)
     {
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
-        Instance = this;
-        Refresh();
+        
     }
 
+<<<<<<< HEAD
     public void Add(int amount)
     {
         Score += amount;
@@ -39,5 +48,11 @@ public class ScoreManagerTMP : MonoBehaviour
     private void Refresh()
     {
         if (scoreText != null) scoreText.text = prefix + Score;
+=======
+    // Update is called once per frame
+    void Update()
+    {
+        
+>>>>>>> parent of 4ffe70a (Score System Logic Established)
     }
 }
