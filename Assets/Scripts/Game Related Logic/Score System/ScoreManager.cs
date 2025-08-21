@@ -1,15 +1,19 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class ScoreManagerTMP : MonoBehaviour
 {
     public static ScoreManagerTMP Instance { get; private set; }
 
-    [SerializeField] private TMP_Text scoreText;
+    [Header("UI")]
+    [SerializeField] private TMP_Text scoreText;   // assign in Inspector
     [SerializeField] private string prefix = "Score: ";
 
     public int Score { get; private set; }
-    private const int DumpPoints = 100;
+
+    // NEW: anyone can subscribe to score updates
+    public event Action<int> OnScoreChanged;
 
     private void Awake()
     {
@@ -18,23 +22,22 @@ public class ScoreManagerTMP : MonoBehaviour
         Refresh();
     }
 
-    private void OnEnable()  { TrashCan.OnAnyEmptied += HandleEmptied; }
-    private void OnDisable() { TrashCan.OnAnyEmptied -= HandleEmptied; }
-
-    private void HandleEmptied(TrashCan _)
-    {
-        Add(DumpPoints);
-    }
-
     public void Add(int amount)
     {
         Score += amount;
         Refresh();
+        OnScoreChanged?.Invoke(Score);   // notify
+    }
+
+    public void ResetScore()
+    {
+        Score = 0;
+        Refresh();
+        OnScoreChanged?.Invoke(Score);   // notify
     }
 
     private void Refresh()
     {
-        if (scoreText != null)
-            scoreText.text = prefix + Score;
+        if (scoreText != null) scoreText.text = prefix + Score;
     }
 }

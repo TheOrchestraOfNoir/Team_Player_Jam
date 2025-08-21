@@ -1233,7 +1233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662912852}
   - component: {fileID: 662912854}
-  - component: {fileID: 662912853}
+  - component: {fileID: 662912855}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1256,44 +1256,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 869097101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &662912853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662912851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004cd09a6bb964b289d17252986fcb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entries:
-  - prefab: {fileID: 1971201887}
-    spawnPoint: {fileID: 0}
-    direction: 0
-    throwForce: 10
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  - prefab: {fileID: 1266785250}
-    spawnPoint: {fileID: 0}
-    direction: 0
-    throwForce: 10
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  - prefab: {fileID: 1855350853}
-    spawnPoint: {fileID: 0}
-    direction: 0
-    throwForce: 10
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  spawnInterval: 1.25
-  autoStart: 1
-  mode: 1
-  maxActive: 12
 --- !u!212 &662912854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1346,6 +1308,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &662912855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662912851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea2dc5e63c884b9ba05226eb68c7789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668887049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2649367880407620002, guid: cc31951702a19d249afa8e82b5ded996, type: 3}
@@ -1528,35 +1502,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 781070890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004cd09a6bb964b289d17252986fcb98, type: 3}
+  m_Script: {fileID: 11500000, guid: cea2dc5e63c884b9ba05226eb68c7789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entries:
-  - prefab: {fileID: 1053421647}
-    spawnPoint: {fileID: 0}
-    direction: 1
-    throwForce: 10
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  - prefab: {fileID: 2035299071}
-    spawnPoint: {fileID: 0}
-    direction: 1
-    throwForce: 0
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  - prefab: {fileID: 2098243157}
-    spawnPoint: {fileID: 0}
-    direction: 1
-    throwForce: 10
-    enableLifetime: 1
-    lifetimeSeconds: 6.5
-    weight: 0
-  spawnInterval: 1.25
-  autoStart: 1
-  mode: 1
-  maxActive: 12
+--- !u!1 &804264549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 804264550}
+  m_Layer: 0
+  m_Name: DiffculityDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &804264550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804264549}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.1544943, y: -4.092173, z: -0.6992166}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &844011809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,7 +1847,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.860152
+  orthographic size: 9.267764
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -4102,3 +4081,4 @@ SceneRoots:
   - {fileID: 179068688}
   - {fileID: 1133190416}
   - {fileID: 755797078}
+  - {fileID: 804264550}
