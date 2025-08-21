@@ -1848,7 +1848,11 @@ Camera:
   field of view: 60
   orthographic: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   orthographic size: 9.267764
+=======
+  orthographic size: 11.041558
+>>>>>>> parent of 4ffe70a (Score System Logic Established)
 =======
   orthographic size: 11.041558
 >>>>>>> parent of 4ffe70a (Score System Logic Established)
