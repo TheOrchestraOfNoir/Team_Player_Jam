@@ -8,6 +8,7 @@ TagManager:
   - Banana
   - Bottle
   - Dumpster
+  - Enemy
   layers:
   - Default
   - TransparentFX
